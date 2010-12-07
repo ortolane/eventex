@@ -2,6 +2,9 @@
 
 import os
 PROJECT_DIR = os.path.dirname(__file__)
+MEDIA_ROOT  = os.path.join(PROJECT_DIR, 'media')
+MEDIA_URL   = '/media/'
+ADMIN_MEDIA_PREFIX = MEDIA_URL + 'admin/'
 
 
 DEBUG = True
