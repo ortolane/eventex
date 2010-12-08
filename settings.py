@@ -2,9 +2,6 @@
 
 import os
 PROJECT_DIR = os.path.dirname(__file__)
-MEDIA_ROOT  = os.path.join(PROJECT_DIR, 'media')
-MEDIA_URL   = '/media/'
-ADMIN_MEDIA_PREFIX = MEDIA_URL + 'admin/'
 
 
 DEBUG = True
@@ -27,6 +24,8 @@ DATABASES = {
     }
 }
 
+DEFAULT_FROM_EMAIL = 'ortolane@gmail.com'
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -34,11 +33,11 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/Sao_Paulo'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 SITE_ID = 1
 
@@ -52,17 +51,17 @@ USE_L10N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+ADMIN_MEDIA_PREFIX = MEDIA_URL + '/media/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'k(n0z*ywf98b=hfpqj&-%*o4bw(lsh_(oc8(@k*3g1im4yf-hq'
@@ -98,8 +97,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'core',
+    'subscription',
 )
