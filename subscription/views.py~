@@ -23,7 +23,7 @@ def create(request):
 
     subscription = form.save()
     # notifica o cadastro
-    send_subscription_email(subscription)
+#    send_subscription_email(subscription)
     return HttpResponseRedirect(reverse('subscription:success', args=[ subscription.pk ]))
 
 def subscribe(request):
